@@ -12,7 +12,15 @@ namespace Sweepstakes
         ISweepstakesManager manageSweepstakes;
         public MarketingFirm(ISweepstakesManager manageSweepstakes)
         {
-
+            switch (item.ToLower())
+            {
+                case "queue":
+                    return new SweepstakesQueueManager();
+                case "stack":
+                    return new SweepstakesStackManager();
+                default:
+                    throw new ApplicationException(string.Format("Not a valid choice."));
+            }
         }
     }
 }

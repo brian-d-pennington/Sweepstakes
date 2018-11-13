@@ -13,7 +13,6 @@ namespace Sweepstakes
         public string emailAddress = UI.email;
         public int registrationNumber;
 
-        public bool newContestantRegistered;
         int firstRegisterNumber = 1000;
 
         public Contestant()
@@ -26,11 +25,8 @@ namespace Sweepstakes
 
         public void GetRegistrationNumber()
         {
-            if (newContestantRegistered == true)
-            {
-                firstRegisterNumber++;
-                registrationNumber = firstRegisterNumber;
-            }
+            firstRegisterNumber++;
+            registrationNumber = firstRegisterNumber;
         }
     }
 }

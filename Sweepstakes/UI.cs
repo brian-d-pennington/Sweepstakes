@@ -29,5 +29,14 @@ namespace Sweepstakes
             Console.WriteLine("What is your email address?");
             email = Console.ReadLine();
         }
+
+        public static void ConfirmPersonalInfo()
+        {
+            Console.WriteLine("Does this look correct?");
+            Console.WriteLine(first + " " + last);
+            Console.WriteLine(email);
+            Console.WriteLine("Yes: type Y, No: type N");
+            string confirmInfo = Console.ReadLine().ToLower();
+        }
     }
 }

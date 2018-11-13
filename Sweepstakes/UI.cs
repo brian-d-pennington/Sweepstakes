@@ -12,6 +12,21 @@ namespace Sweepstakes
         public static string last;
         public static string email;
 
+        public static bool contestantEntered = false;
+        public static string confirmInfo;
+
+        public static void ContestantEntered()
+        {
+            if (confirmInfo == "y")
+            {
+                contestantEntered = true;
+            }
+            else
+            {
+                contestantEntered = false;
+            }
+        }
+
         public static void GetContestantFirstName()
         {
             Console.WriteLine("Please enter your first name: ");
@@ -36,7 +51,7 @@ namespace Sweepstakes
             Console.WriteLine(first + " " + last);
             Console.WriteLine(email);
             Console.WriteLine("Yes: type Y, No: type N");
-            string confirmInfo = Console.ReadLine().ToLower();
+            confirmInfo = Console.ReadLine().ToLower();
         }
     }
 }

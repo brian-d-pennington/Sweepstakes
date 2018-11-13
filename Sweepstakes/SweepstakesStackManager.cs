@@ -15,7 +15,9 @@ namespace Sweepstakes
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            Stack<Sweepstakes> stack = new Stack<Sweepstakes>();
+
+            stack.Push(sweepstakes);
         }
     }
 }

@@ -12,14 +12,20 @@ namespace Sweepstakes
         ISweepstakesManager manageSweepstakes;
         public MarketingFirm(ISweepstakesManager manageSweepstakes)
         {
-            switch (item.ToLower())
+            Console.WriteLine("Choose between 'queue' or 'stack' management system.");
+
+            string managerEntry = Console.ReadLine();
+            switch (managerEntry)
             {
                 case "queue":
-                    return new SweepstakesQueueManager();
+                    manageSweepstakes = new SweepstakesQueueManager();
+                    break;
                 case "stack":
-                    return new SweepstakesStackManager();
+                    manageSweepstakes = new SweepstakesStackManager();
+                    break;
                 default:
                     throw new ApplicationException(string.Format("Not a valid choice."));
+                    break;
             }
         }
     }

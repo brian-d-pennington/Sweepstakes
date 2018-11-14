@@ -10,6 +10,7 @@ namespace Sweepstakes
     {
         public Sweepstakes sweepstakes;
         public ManagerFactory manager;
+        public Contestant contestant;
         public string sweepstakeName;
         
         ISweepstakesManager manageSweepstakes;
@@ -17,7 +18,7 @@ namespace Sweepstakes
         public MarketingFirm(ISweepstakesManager manageSweepstakes)
         {
             Console.WriteLine("What would you like to call your new Sweepstakes?");
-            sweepstakeName = Console.ReadLine();
+            string sweepstakeName = Console.ReadLine();
             sweepstakes = new Sweepstakes(sweepstakeName);
             manager.SweepstakesAssign(manageSweepstakes);
             this.manageSweepstakes = manageSweepstakes;

@@ -39,7 +39,7 @@ namespace Sweepstakes
                 {
                     PickWinner();
                 }
-            } return "winning registration number";
+            } return "winner";
             
         }
 

@@ -15,6 +15,7 @@ namespace Sweepstakes
         public static bool contestantEntered;
         public static string confirmInfo;
 
+
         public static void ContestantEntered()
         {
             contestantEntered = false;

@@ -23,6 +23,18 @@ namespace Sweepstakes
             int registrationNumber;
         }
 
+        public void ContestantRegistration()
+        {
+            if (UI.contestantEntered == false)
+            {
+                UI.GetContestantFirstName();
+                UI.GetContestantLastName();
+                UI.GetContestantEmail();
+                GetRegistrationNumber();
+                UI.ConfirmPersonalInfo();
+                UI.ContestantEntered();
+            }
+        }
         public void GetRegistrationNumber()
         {
             firstRegisterNumber++;

@@ -10,6 +10,8 @@ namespace Sweepstakes
     {
         Dictionary<Contestant, int> registeredContestants = new Dictionary<Contestant, int>();
 
+        string winningRegistrationNumber;
+
         Sweepstakes(string name)
         {
             
@@ -24,8 +26,6 @@ namespace Sweepstakes
 
         string PickWinner()
         {
-            string winningRegistrationNumber;
-
             Random winningPick = new Random();
             int sweepstakesPick = winningPick.Next(1, registeredContestants.Count) + 1000;
             foreach (KeyValuePair<Contestant, int> contestant in registeredContestants)
@@ -36,7 +36,7 @@ namespace Sweepstakes
                     return winningRegistrationNumber;
                 }
                
-            } return "winner";
+            } return winningRegistrationNumber;
             
         }
 

@@ -35,10 +35,7 @@ namespace Sweepstakes
                     winningRegistrationNumber = contestant.Value.ToString();
                     return winningRegistrationNumber;
                 }
-                else
-                {
-                    PickWinner();
-                }
+               
             } return "winner";
             
         }

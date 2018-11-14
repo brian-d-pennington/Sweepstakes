@@ -12,7 +12,7 @@ namespace Sweepstakes
 
         public Sweepstakes GetSweepstakes()
         {
-            queueManager.Dequeue();
+             return queueManager.Dequeue();
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)

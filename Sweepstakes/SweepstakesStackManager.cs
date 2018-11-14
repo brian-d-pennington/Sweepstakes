@@ -12,7 +12,7 @@ namespace Sweepstakes
 
         public Sweepstakes GetSweepstakes()
         {
-            stackManager.Pop();
+            return stackManager.Pop();
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)

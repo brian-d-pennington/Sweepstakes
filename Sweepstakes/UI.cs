@@ -12,11 +12,13 @@ namespace Sweepstakes
         public static string last;
         public static string email;
 
-        public static bool contestantEntered = false;
+        public static bool contestantEntered;
         public static string confirmInfo;
 
         public static void ContestantEntered()
         {
+            contestantEntered = false;
+
             if (confirmInfo == "y")
             {
                 contestantEntered = true;

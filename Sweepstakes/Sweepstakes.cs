@@ -22,19 +22,25 @@ namespace Sweepstakes
             registeredContestants.Add(contestant, contestant.registrationNumber);
         }
 
-        public string PickWinner()
+        string PickWinner()
         {
+            string winningRegistrationNumber;
+
             Random winningPick = new Random();
-            int sweepstakesWinner = winningPick.Next(1, registeredContestants.Count) + 1000;
+            int sweepstakesPick = winningPick.Next(1, registeredContestants.Count) + 1000;
             foreach (KeyValuePair<Contestant, int> contestant in registeredContestants)
             {
-                if (contestant.Value == sweepstakesWinner)
+                if (contestant.Value == sweepstakesPick)
                 {
-                    Console.WriteLine("Winner: " + contestant.firstName + " " + contestant.lastName + "!");
+                    winningRegistrationNumber = contestant.Value.ToString();
+                    return winningRegistrationNumber;
                 }
-                    
-            }
-
+                else
+                {
+                    PickWinner();
+                }
+            } return "winning registration number";
+            
         }
 
         void PrintContestantInfo(Contestant contestant)

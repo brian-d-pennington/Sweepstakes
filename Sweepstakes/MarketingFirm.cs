@@ -8,11 +8,23 @@ namespace Sweepstakes
 {
     class MarketingFirm
     {
+        public Sweepstakes sweepstakes;
+        public ManagerFactory manager;
+        public string sweepstakeName;
         
         ISweepstakesManager manageSweepstakes;
+
         public MarketingFirm(ISweepstakesManager manageSweepstakes)
         {
+            Console.WriteLine("What would you like to call your new Sweepstakes?");
+            sweepstakeName = Console.ReadLine();
+            sweepstakes = new Sweepstakes(sweepstakeName);
+            manager.SweepstakesAssign(manageSweepstakes);
             this.manageSweepstakes = manageSweepstakes;
+            manageSweepstakes.InsertSweepstakes(sweepstakes);
+            sweepstakes.RegisterContestant(contestant);
         }
+
+       
     }
 }

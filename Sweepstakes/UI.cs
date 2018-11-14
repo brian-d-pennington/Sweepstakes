@@ -14,8 +14,28 @@ namespace Sweepstakes
 
         public static bool contestantEntered;
         public static string confirmInfo;
+        public static int registrationNumber;
+        public static int firstRegisterNumber = 1000;
 
 
+
+        public static void ContestantEntersPersonalInfo()
+        {
+            if (contestantEntered == false)
+            {
+                GetContestantFirstName();
+                GetContestantLastName();
+                GetContestantEmail();
+                GetRegistrationNumber();
+                ConfirmPersonalInfo();
+                ContestantEntered();
+            }
+        }
+        public static void GetRegistrationNumber()
+        {
+            firstRegisterNumber++;
+            registrationNumber = firstRegisterNumber;
+        }
         public static void ContestantEntered()
         {
             contestantEntered = false;

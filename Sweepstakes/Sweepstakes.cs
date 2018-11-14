@@ -10,21 +10,21 @@ namespace Sweepstakes
     {
         Dictionary<Contestant, int> registeredContestants = new Dictionary<Contestant, int>();
 
+        string name;
         string winningRegistrationNumber;
 
-        Sweepstakes(string name)
+        public Sweepstakes(string name)
         {
-            
+            this.name = name;
         }
 
         
-        void RegisterContestant(Contestant contestant)
+        public void RegisterContestant(Contestant contestant)
         {
-            contestant.GetRegistrationNumber();
             registeredContestants.Add(contestant, contestant.registrationNumber);
         }
 
-        string PickWinner()
+        public string PickWinner()
         {
             Random winningPick = new Random();
             int sweepstakesPick = winningPick.Next(1, registeredContestants.Count) + 1000;
@@ -40,7 +40,7 @@ namespace Sweepstakes
             
         }
 
-        void PrintContestantInfo(Contestant contestant)
+        public void PrintContestantInfo(Contestant contestant)
         {
             Console.WriteLine(contestant.firstName + " " + contestant.lastName);
             Console.WriteLine(contestant.emailAddress);

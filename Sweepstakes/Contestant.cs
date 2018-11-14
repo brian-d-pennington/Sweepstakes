@@ -8,37 +8,21 @@ namespace Sweepstakes
 {
     public class Contestant
     {
-        public string firstName = UI.first;
-        public string lastName = UI.last;
-        public string emailAddress = UI.email;
+        public string firstName;
+        public string lastName;
+        public string emailAddress;
         public int registrationNumber;
 
         int firstRegisterNumber = 1000;
 
         public Contestant()
         {
-            string firstName;
-            string lastName;
-            string emailAddress;
-            int registrationNumber;
+            string firstName = UI.first;
+            string lastName = UI.last;
+            string emailAddress = UI.email;
+            int registrationNumber = UI.registrationNumber;
         }
 
-        public void ContestantRegistration()
-        {
-            if (UI.contestantEntered == false)
-            {
-                UI.GetContestantFirstName();
-                UI.GetContestantLastName();
-                UI.GetContestantEmail();
-                GetRegistrationNumber();
-                UI.ConfirmPersonalInfo();
-                UI.ContestantEntered();
-            }
-        }
-        public void GetRegistrationNumber()
-        {
-            firstRegisterNumber++;
-            registrationNumber = firstRegisterNumber;
-        }
+       
     }
 }

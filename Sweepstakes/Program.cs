@@ -10,10 +10,10 @@ namespace Sweepstakes
     {
         static void Main(string[] args)
         {
-            ISweepstakesManager manageSweepstakes = SweepstakesAssign();
+            MarketingFirm marketingFirm = new MarketingFirm(ManagerFactory.SweepstakesAssign());
+            marketingFirm.RunSweepstakes();
 
-            ILogger loggerToPassIn = LoggerFactory.GenerateLogger(userInput);
-            Chatroom chatroom = new Chatroom(loggerToPassIn);
+            Console.ReadLine();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Sweepstakes
         public static string confirmInfo;
         public static int registrationNumber;
         public static int firstRegisterNumber = 1000;
+        
 
 
 
@@ -30,7 +31,14 @@ namespace Sweepstakes
                 ConfirmPersonalInfo();
                 ContestantEntered();
             }
+            CreateContestant();
         }
+
+        public static void CreateContestant()
+        {
+            Contestant contestant = new Contestant();
+        }
+
         public static void GetRegistrationNumber()
         {
             firstRegisterNumber++;

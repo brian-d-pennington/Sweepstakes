@@ -17,13 +17,16 @@ namespace Sweepstakes
 
         public MarketingFirm(ISweepstakesManager manageSweepstakes)
         {
+            this.manageSweepstakes = manageSweepstakes;
+        }
+
+        public void RunSweepstakes()
+        {
             Console.WriteLine("What would you like to call your new Sweepstakes?");
             string sweepstakeName = Console.ReadLine();
             sweepstakes = new Sweepstakes(sweepstakeName);
-            manager.SweepstakesAssign(manageSweepstakes);
-            this.manageSweepstakes = manageSweepstakes;
             manageSweepstakes.InsertSweepstakes(sweepstakes);
-            sweepstakes.RegisterContestant(contestant);
+            sweepstakes.PickWinner();
         }
 
        

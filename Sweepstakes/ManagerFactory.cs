@@ -8,7 +8,7 @@ namespace Sweepstakes
 {
     class ManagerFactory
     {
-        public void SweepstakesAssign(ISweepstakesManager manageSweepstakes)
+        public static ISweepstakesManager SweepstakesAssign()
         {
             Console.WriteLine("Choose between 'queue' or 'stack' management system.");
 
@@ -16,11 +16,11 @@ namespace Sweepstakes
             switch (managerEntry)
             {
                 case "queue":
-                    manageSweepstakes = new SweepstakesQueueManager();
-                    break;
+                    return new SweepstakesQueueManager();
+                    
                 case "stack":
-                    manageSweepstakes = new SweepstakesStackManager();
-                    break;
+                    return new SweepstakesStackManager();
+ 
                 default:
                     throw new ApplicationException(string.Format("Not a valid choice."));
                    
